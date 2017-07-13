@@ -7,26 +7,115 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<div id="wrapper">
-			<div id="sidebar-wrapper">
+		<div class="wrapper">
+			<div class="sidebar-wrapper">
 				<ul class="sidebar-nav">
-					<li class="sidebar-brand"><a href="#">Home</a></li>
-					<li data-toggle="collapse" data-target="#projects"><a href="#">Projects</a></li>
-						<ul id="projects" class="collapse">
-							<li><a href="#">Project 1</a></li>
+					<li><a href="./index.html">Home</a></li>
+					<li data-toggle="collapse" data-target="#projects"><span class="drop">Projects <span class="caret"></span></span></li>
+						<ul id="projects" class="collapse clean">
+							<li><a href="#">Foreground Extraction</a></li>
 							<li><a href="#">Project 2</a></li>
 							<li><a href="#">Project 3</a></li>
 						</ul>
 					</li>
+					<li><a href="#">Resume</a></li>
+					<li><a href="#">Contact</a></li>
 				</ul>
 			</div>
-			<div id="page-content-wrapper">
+			<div class="page-content-wrapper">
 				<div class="container-fluid">
-					<div class="row">
-						<div class="col-lg-12">
-							<h1>Hello</h1>
-						</div>
+
+					<div class="name inline">Shihan Ai </div>
+					<div class="inline">[<a href="#">Resume</a>]</div>
+
+					<div class="heading">Education</div>
+					<div class="block">
+						<div class="title">University of Toronto, HBSc with Distinction in Computer Science</div>
+						<div class="time">September 2012 - June 2017</div>
+						<ul>
+							<li class="text">Completed a specialist degree in Artificial Intelligence</li>
+							<li class="text">Coursework focused in Machine Learning and Computer Vision.</li>
+						</ul>
 					</div>
+
+					</br>
+
+					<div class="heading">Technical Skills</div>
+					<div class="block">
+						<div class="title inline">Computer Vision &#38; Machine Learning:</div>
+						<div class="text inline">Python, C++, MATLAB, NumPy, OpenCV, TensorFlow</div>
+					</div>
+					<div class="block">
+						<div class="title inline">Web Development:</div>
+						<div class="text inline">HTML, CSS, JavaScript, NodeJS, React, SQL, MongoDB</div>
+					</div>
+					<div class="block">
+						<div class="title inline">Mobile Development:</div>
+						<div class="text inline">Swift</div>
+					</div>
+
+					<ul></ul></br>
+
+					<div class="heading">Professional Experience</div>
+					<div class="block">
+						<div class="title">IBM, Software Engineer Intern</div>
+						<div class="time">May 2015 - August 2016</div>
+						<ul>
+							<li class="text">Designed the backend of a central analytics platform for IBM dashDB and provided managers with real-time analytics.</li>
+							<li class="text">Developed a tweet scheduler to automate the promotion of IBM DB2 on Twitter.</li>
+							<li class="text">Automated the collection of video analytics from YouTube and generated infographics to understand the data.</li>
+						</ul>
+					</div>
+					<div class="block">
+						<div class="title">University of Toronto, Research Assistant</div>
+						<div class="time">May 2014 - August 2014</div>
+						<ul>
+							<li class="text">Developed a command line tool that attaches semantic meaning to unstructured web data using NLTK.</li>
+							<li class="text">Created a Twitter bot that responds to movie related tweets with showtimes, and recommendations.</li>
+							<li class="text">Performed statistical and lexical analysis on tweets to understand the structure of natural language on social media.</li>
+						</ul>
+					</div>
+
+					</br>
+
+					<div class="heading">Projects</div>
+					<div class="block">
+						<a href="#" class="title">Photo Editor &#38; Enhancer</a>
+						<div class="time">July 2017 - Present</div>
+						<ul>
+							<li class="text">Developed a command line tool that can edit and add effects to photos.</li>
+							<li class="text">Tested various smoothing functions and evaluated their effectiveness in achieving a photogenic blurring effect.</li>
+							<li class="text">Implemented color mapping effects to user marked objects in an image by utilizing foreground extraction techniques and the YUV color space.</li>
+							<li class="text">Currently working on porting the tool to the iOS mobile platform.</li>
+						</ul>
+					</div>
+					<div class="block">
+						<a href="#" class="title">Optimized Interactive Foreground Extraction</a>
+						<div class="time">June 2017 - July 2017</div>
+						<ul>
+							<li class="text">Developed an algorithm that can classify pixels in an image as either the foreground or the background of the image.</li>
+							<li class="text">Independently researched and implemented methods to decrease processing time when processing high resolution photos.</li>
+							<li class="text">Performed benchmark tests against traditional foreground extraction methods such as <a href="#">GrabCut</a> and improved the processing time of 12-Megapixel (3024 x 4032) images from an average of 74 seconds to 3.6 seconds.</li>
+						</ul>
+					</div>
+					<div class="block">
+						<a href="#" class="title">Exemplar-Based Image Inpainting</a>
+						<div class="time">May 2017 - June 2017</div>
+						<ul>
+							<li class="text">Independently researched and implemented an algorithm that can crop out user defined areas of an image and fill the cropped-out areas with believable textures.</li>
+							<li class="text">Analyzed and identified the optimal hyper parameters to produce results with little or no optical artifacts.</li>
+							<li class="text">Identified and applied the algorithm to real world applications such as acne removal in photos.</li>
+						</ul>
+					</div>
+					<div class="block">
+						<a href="#" class="title">Seam Carving</a>
+						<div class="time">November 2016 - December 2016</div>
+						<ul>
+							<li class="text">Implemented an algorithm that performs content-aware image resizing by removing seams comprised of the least significant pixels in an image.</li>
+							<li class="text">Identified and tested the effectiveness of various definitions of pixel significance.</li>
+						</ul>
+					</div>
+
 				</div>
 			</div>
 		</div>

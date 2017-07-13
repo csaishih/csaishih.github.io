@@ -2,7 +2,7 @@ body {
   overflow-x: hidden;
 }
 
-#wrapper {
+.wrapper {
     padding-left: 250px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -10,7 +10,7 @@ body {
     transition: all 0.5s ease;
 }
 
-#sidebar-wrapper {
+.sidebar-wrapper {
     z-index: 1000;
     position: fixed;
     left: 250px;
@@ -18,14 +18,15 @@ body {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    /*background: #000;*/
+    border-right: 1px solid #eee;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
-#page-content-wrapper {
+.page-content-wrapper {
     width: 100%;
     position: absolute;
     margin-right: -250px;
@@ -54,7 +55,7 @@ body {
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: #000;
     background: rgba(255,255,255,0.2);
 }
 
@@ -78,17 +79,57 @@ body {
     background: none;
 }
 
+.drop {
+  color: #999999;
+  cursor: pointer;
+}
+
+.drop:hover {
+  color: #000;
+}
+
+.heading {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.name {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.clean {
+  list-style: none;
+}
+
+.inline {
+  display: inline;
+}
+
+ul {
+  padding-left: 10px;
+}
+
+li, .text {
+  margin-left: 5px;
+}
+
 @media(min-width:768px) {
-    #wrapper {
+    .wrapper {
         padding-left: 0;
         padding-left: 250px;
     }
 
-    #sidebar-wrapper {
+    .sidebar-wrapper {
         width: 250px;
     }
 
-    #page-content-wrapper {
+    .page-content-wrapper {
         padding: 20px;
         position: relative;
         margin-right: 0;
