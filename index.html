@@ -10,15 +10,17 @@
 		<div class="wrapper">
 			<div class="sidebar-wrapper">
 				<ul class="sidebar-nav">
-					<li><a href="./index.html">Home</a></li>
+					<li><a href="./index.html" class="active">Home</a></li>
 					<li data-toggle="collapse" data-target="#projects"><span class="drop">Projects <span class="caret"></span></span></li>
-						<ul id="projects" class="collapse clean">
-							<li><a href="#">Foreground Extraction</a></li>
-							<li><a href="#">Project 2</a></li>
-							<li><a href="#">Project 3</a></li>
+						<ul id="projects" class="collapse in clean">
+							<li><a href="./html/photoeditor.html">Photo Editor &#38; Enhancer</a></li>
+							<li><a href="./html/foregroundextraction.html">Foreground Extraction</a></li>
+							<li><a href="./html/inpaint.html">Image Inpainting</a></li>
+							<li><a href="./html/seamcarve.html">Seam Carving</a></li>
+							<li><a href="./html/transformations.html">Projection Transformations</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Resume</a></li>
+					<li><a href="./ai_shihan_resume.pdf">Resume</a></li>
 					<li><a href="#">Contact</a></li>
 				</ul>
 			</div>
@@ -26,8 +28,8 @@
 				<div class="container-fluid">
 
 					<div class="name inline">Shihan Ai </div>
-					<div class="inline">[<a href="#">Resume</a>]</div>
-
+					<div class="inline">[<a href="./ai_shihan_resume.pdf">Resume</a>]</div>
+					<hr>
 					<div class="heading">Education</div>
 					<div class="block">
 						<div class="title">University of Toronto, HBSc with Distinction in Computer Science</div>
@@ -37,7 +39,6 @@
 							<li class="text">Coursework focused in Machine Learning and Computer Vision.</li>
 						</ul>
 					</div>
-
 					</br>
 
 					<div class="heading">Technical Skills</div>
@@ -53,7 +54,6 @@
 						<div class="title inline">Mobile Development:</div>
 						<div class="text inline">Swift</div>
 					</div>
-
 					<ul></ul></br>
 
 					<div class="heading">Professional Experience</div>
@@ -75,12 +75,11 @@
 							<li class="text">Performed statistical and lexical analysis on tweets to understand the structure of natural language on social media.</li>
 						</ul>
 					</div>
-
 					</br>
 
 					<div class="heading">Projects</div>
 					<div class="block">
-						<a href="#" class="title">Photo Editor &#38; Enhancer</a>
+						<a href="./html/photoeditor.html" class="title">Photo Editor &#38; Enhancer</a>
 						<div class="time">July 2017 - Present</div>
 						<ul>
 							<li class="text">Developed a command line tool that can edit and add effects to photos.</li>
@@ -90,16 +89,16 @@
 						</ul>
 					</div>
 					<div class="block">
-						<a href="#" class="title">Optimized Interactive Foreground Extraction</a>
+						<a href="./html/foregroundextraction.html" class="title">Optimized Interactive Foreground Extraction</a>
 						<div class="time">June 2017 - July 2017</div>
 						<ul>
 							<li class="text">Developed an algorithm that can classify pixels in an image as either the foreground or the background of the image.</li>
 							<li class="text">Independently researched and implemented methods to decrease processing time when processing high resolution photos.</li>
-							<li class="text">Performed benchmark tests against traditional foreground extraction methods such as <a href="#">GrabCut</a> and improved the processing time of 12-Megapixel (3024 x 4032) images from an average of 74 seconds to 3.6 seconds.</li>
+							<li class="text">Performed benchmark tests against traditional foreground extraction methods such as <a href="https://cvg.ethz.ch/teaching/cvl/2012/grabcut-siggraph04.pdf">GrabCut</a> and improved the processing time of 12-Megapixel (3024 x 4032) images from an average of 74 seconds to 3.6 seconds.</li>
 						</ul>
 					</div>
 					<div class="block">
-						<a href="#" class="title">Exemplar-Based Image Inpainting</a>
+						<a href="./html/inpaint.html" class="title">Exemplar-Based Image Inpainting</a>
 						<div class="time">May 2017 - June 2017</div>
 						<ul>
 							<li class="text">Independently researched and implemented an algorithm that can crop out user defined areas of an image and fill the cropped-out areas with believable textures.</li>
@@ -108,7 +107,7 @@
 						</ul>
 					</div>
 					<div class="block">
-						<a href="#" class="title">Seam Carving</a>
+						<a href="./html/seamcarve.html" class="title">Seam Carving</a>
 						<div class="time">November 2016 - December 2016</div>
 						<ul>
 							<li class="text">Implemented an algorithm that performs content-aware image resizing by removing seams comprised of the least significant pixels in an image.</li>
