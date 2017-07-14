@@ -17,7 +17,7 @@
 							<li><a href="./foregroundextraction.html">Foreground Extraction</a></li>
 							<li><a href="./inpaint.html">Image Inpainting</a></li>
 							<li><a href="./seamcarving.html" class="active">Seam Carving</a></li>
-							<li><a href="./html/transformations.html">Projection Transformations</a></li>
+							<li><a href="./transformations.html">Projection Transformations</a></li>
 						</ul>
 					</li>
 					<li><a href="../ai_shihan_resume.pdf">Resume</a></li>
@@ -27,11 +27,11 @@
 			<div class="page-content-wrapper">
 				<div class="container-fluid">
 
-					<div class="name">Seam Carving </div>
+					<div class="name">Seam Carving</div>
 					<hr>
 					<div class="heading">What it does</div>
 					<div class="block">
-						<div class="text">Seam carving is an algorithm that performs content-aware image resizing. In simpler terms, it is an algorithm that can resize photos without altering the important parts of the photo.</div>
+						<div class="text">Seam carving is an algorithm that performs content-aware image resizing. In other words, it is an algorithm that can resize a photo without altering the important parts of the photo.</div>
 						</br>
 						<div class="text">Suppose we have the following image with resolution 490 x 275 and we would like to resize it to 300 x 275</div>
 						<img src="../assets/seam_carve/source.jpg" alt="source" />
@@ -56,7 +56,7 @@
 						</br></br>
 						<div class="text">The algorithm removes one seam at a time until the desired resolution is achieved and it will always remove the seam with the lowest energy. We define the energy of a pixel as the gradient magnitude of the pixel and the energy of a seam as the sum of the energy from each pixel in the seam. In simpler terms, the energy of a pixel is defined as the amount of color variation between the pixel and its 8 surrounding pixels.</div>
 						</br>
-						<div class="text">The intuition behind removing the seam with lowest energy is that by doing so, we remove pixels that have very small changes in color intensity when compared to its neighbours. By doing so, we remove pixels that don't give us any important information (since the neighbouring pixels share very similar colors and can tell us the same thing).</div>
+						<div class="text">The intuition behind removing the seam with lowest energy is that by doing so, we remove pixels that have very small changes in color intensity when compared to its neighbours. Therefore, we remove pixels that don't give us any important information (since the neighbouring pixels share very similar colors and can tell us the same thing).</div>
 						</br>
 						<div class="text">The gradient magnitude is shown below. White pixels indicate high color variation whereas black pixels indicate low color variation. We can see that a seam crossing the bird or a branch will have higher energy than a seam crossing only the background because there are more white pixels in the bird and branches than there are in the background.</div>
 						<img src="../assets/seam_carve/gradient.png" alt="gradient_map" />
