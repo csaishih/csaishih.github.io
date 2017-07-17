@@ -114,6 +114,14 @@ body {
   display: inline;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
 ul {
   padding-left: 10px;
 }
