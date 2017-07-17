@@ -49,14 +49,14 @@
 						<img src="../assets/inpaint/sourceworks.png" alt="sourceworks" />
 						<img src="../assets/inpaint/mask.png" alt="mask" />
 						</br></br>
-						<div class="text">Given the region we want to remove, we find its contour with OpenCV's <a href="http://docs.opencv.org/2.4/modules/imgproc/doc/structural_analysis_and_shape_descriptors.html?highlight=findcontours#findcontours">findContours</a> function. For each point on the contour, we create a <a href="https://github.com/g3aishih/image-inpainting/blob/master/patch.py">Patch</a> object to represent a 9x9 patch of the image with the contour point as the center of the patch. We select one of these patches and replace it with the most similar patch from &Phi;. After we replace the patch, we update the contour and determine the patches on the contour that still need to be replaced, another patch is selected and the process repeats until all patches are replaced. The process is shown below with the patch on the contour shown in red and the most similar patch shown in green.</div>
+						<div class="text">Given the region we want to remove, we find its contour with OpenCV's <a href="http://docs.opencv.org/2.4/modules/imgproc/doc/structural_analysis_and_shape_descriptors.html?highlight=findcontours#findcontours" target="_blank">findContours</a> function. For each point on the contour, we create a <a href="https://github.com/g3aishih/image-inpainting/blob/master/patch.py">Patch</a> object to represent a 9x9 patch of the image with the contour point as the center of the patch. We select one of these patches and replace it with the most similar patch from &Phi;. After we replace the patch, we update the contour and determine the patches on the contour that still need to be replaced, another patch is selected and the process repeats until all patches are replaced. The process is shown below with the patch on the contour shown in red and the most similar patch shown in green.</div>
 						<img src="../assets/inpaint/algo_animation.gif" alt="animation" />
 						</br></br>
 						<div class="text">Each patch is assigned a priority value so that the patch to be replaced is not selected at random. The priority value is the product of two terms, the confidence term denoted C, and the data term denoted D, and they are defined as follows:</div>
 						<img src="../assets/inpaint/inpaintmath.png" alt="definitions" width="330" height="60" />
 						<div class="text">The confidence term is the sum of the confidence values of all known pixels in the patch divided by the area of the patch. During initialzation, all known pixels are given a confidence value of 1 and all unknown values are given a confidence value of 0. The data term is computed by normalizing the magnitude of a dot product with a normalization factor &alpha;, with &alpha; = 255. The dot product involves the vector orthogonal to the gradient of the image at the patch's center, and the unit normal of the contour at the patch's center.</div>
 						</br>
-						<div class="text">The priority value is critical because it allows us to fill in the removed regions in an order that correctly propagates linear structures, and is robust to changes in the shape of the region. More specifically, the confidence term reduces the sharp out-pointing appendices in the contour and the data term encourages the continuation of image structures. For more information on the confidence and data terms, please see Figure 6 in <a href="http://www.irisa.fr/vista/Papers/2004_ip_criminisi.pdf">Region Filling and Object Removal by Exemplar-Based Image Inpainting</a> by A. Criminisi, P. Pérez, K. Toyama.
+						<div class="text">The priority value is critical because it allows us to fill in the removed regions in an order that correctly propagates linear structures, and is robust to changes in the shape of the region. More specifically, the confidence term reduces the sharp out-pointing appendices in the contour and the data term encourages the continuation of image structures. For more information on the confidence and data terms, please see Figure 6 in <a href="http://www.irisa.fr/vista/Papers/2004_ip_criminisi.pdf" target="_blank">Region Filling and Object Removal by Exemplar-Based Image Inpainting</a> by A. Criminisi, P. Pérez, K. Toyama.
 						</br></br>
 						<div class="text">Without the priority value, there will be no order for selecting a patch for replacement, and the algorithm will produce results with optical artifacts as shown below.</div>
 						<img src="../assets/inpaint/outbad.png" alt="bad" />
@@ -65,7 +65,7 @@
 
 					<div class="heading">Get the code</div>
 					<div class="block">
-						<div class="text">The code is available on <a href="https://github.com/g3aishih/image-inpainting">GitHub</a></div>
+						<div class="text">The code is available on <a href="https://github.com/g3aishih/image-inpainting" target="_blank">GitHub</a></div>
 					</div>
 
 				</div>
