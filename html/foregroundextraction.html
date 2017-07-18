@@ -46,8 +46,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-container">
       <h3><b>HOW IT WORKS</b></h3>
       <hr>
-			<p>The algorithm is broken down into two steps, the first step is to obtain a rough mask of the object by using the GrabCut algorithm on a downsampled version of the image, then upsampling the result back into the image's original resolution, and the second step is to refine the mask. The output of the first step (left) and a close up of the output (right) which outlines the rough edges is shown below.</p>
-			<img src="../assets/foreground_extraction/out_initialMask.png" class="inline" width="300" height="400" />
+			<p>The algorithm is broken down into two steps, the first step is to obtain a rough mask of the object by using the GrabCut algorithm on a downsampled version of the image, then upsampling the result back into the image's original resolution, and the second step is to refine the mask. The output of the first step is shown below.</p>
 			<img src="../assets/foreground_extraction/closeup.png" class="inline" width="475" height="400" /></br></br>
 
 			<p>To refine the mask, first we refine the foreground and background seeds for the image. This can be done by finding the contours of the eroded and dilated versions of the rough mask. The refined foreground seed (green), the refined background seed (blue), and the contour of the rough mask (red) are shown below.</p>
@@ -57,8 +56,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 			<p>First we find the average color intensity of all the foreground seeded pixels and the average color intensity of all the background seeded pixels in the patch, then we look at each unmarked pixel in the patch and determine whether it is closer the foreground color or background color in the RGB color space. Next, we cluster the foreground and background pixels, find their centers, and look at each unmarked pixel and determine whether it is closer to the foreground or background in the image space. We take these two metrics and add them up to determine the total distance (in terms of color and location) between the pixel and either class, and finally we assign the pixel to the class with the smaller distance.</p>
 
-			<p>To speed up computation, four threads are spawned to allow concurrent processing. The result of the refinement step (left) and its closeup (right) are shown below.</p>
-			<img src="../assets/foreground_extraction/out_refinedMask.png" class="inline" width="300" height="400" />
+			<p>To speed up computation, four threads are spawned to allow concurrent processing. The result of the refinement step is shown below.</p>
 			<img src="../assets/foreground_extraction/closeuprefined.png" class="inline" width="475" height="400" /></br></br>
     </div>
   </div>
