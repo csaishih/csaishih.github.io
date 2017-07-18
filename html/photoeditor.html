@@ -1,65 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Shihan Ai Journal</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="../css/bootstrap.min.css">
-		<link rel="stylesheet" href="../css/style.css">
-	</head>
-	<body>
-		<div class="wrapper">
-			<div class="sidebar-wrapper">
-				<ul class="sidebar-nav">
-					<li><a href="../index.html">Home</a></li>
-					<li data-toggle="collapse" data-target="#projects"><span class="drop">Projects <span class="caret"></span></span></li>
-						<ul id="projects" class="collapse in clean">
-							<li><a href="./photoeditor.html" class="active">Photo Editor &#38; Enhancer</a></li>
-							<li><a href="./foregroundextraction.html">Foreground Extraction</a></li>
-							<li><a href="./inpaint.html">Image Inpainting</a></li>
-							<li><a href="./seamcarving.html">Seam Carving</a></li>
-						</ul>
+<html>
+<title>Shihan Ai Journal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="../css/w3.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32">
+  <h1><b>Photo Editor &#38; Enhancer</b></h1>
+  <p>Lightweight photo editor</p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+      <h3><b>WHAT IT DOES</b></h3>
+      <hr>
+			<p>The purpose of this project is to demonstrate some of the applications of <a href="../html/foregroundextraction.html">foreground extraction</a>.</p>
+
+			<p>Take the sample photo (warning high resolution images ahead! 5267 x 2963).</p>
+			<img src="../assets/photoeditor/2.jpg" width="533" height="300" /></br></br>
+
+			<p>We can blur the background to draw more attention to the car.</p>
+			<img src="../assets/photoeditor/2blur.png" width="533" height="300" /></br></br>
+
+			<p>We can change the color car as well.</p>
+			<img src="../assets/photoeditor/2blue.png" width="533" height="300" /></br></br>
+
+			<p>We can remove color from the background to draw even more attention to the car.</p>
+			<img src="../assets/photoeditor/2grayblur.png" width="533" height="300" /></br></br>
+
+			<hr>
+			<p>Let's take another example (resolution: 3600 x 2400).</p>
+			<img src="../assets/photoeditor/4.jpg" width="533" height="355" /></br></br>
+
+			<p>We can change the color of the model's clothes to compare and contrast looks (interesting when you try it with your own selfies).</p>
+			<img src="../assets/photoeditor/4red.png" width="533" height="355" /></br></br>
+
+			<p>Of course this is merely a small subset of the things you can do. Development of other enhancements are in progress.</p>
+  	</div>
+	</div>
+
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card-2 w3-margin w3-margin-top">
+
+			<ul class="w3-ul w3-hoverable w3-white">
+				<a class="w3-a" href="../index.html">
+					<li class="w3-padding-16">
+						<span class="w3-large">Home</span><br>
 					</li>
-					<li><a href="../ai_shihan_resume.pdf">Resume</a></li>
-					<li><a href="../index.html#contact">Contact</a></li>
-				</ul>
-			</div>
-			<div class="page-content-wrapper">
-				<div class="container-fluid">
+				</a>
+			</ul>
 
-					<div class="name">Photo Editor &#38; Enhancer</div>
-					<hr>
-					<div class="heading">What it does</div>
-					<div class="block">
-						<div class="text">The purpose of this project is to demonstrate some of the applications of <a href="../html/foregroundextraction.html">foreground extraction</a>.</div>
-						</br>
-						<div class="text">Take the sample photo (warning high resolution images ahead! 5267 x 2963).</div>
-						<img src="../assets/photoeditor/2.jpg" width="533" height="300" />
-						</br></br>
-						<div class="text">We can blur the background to draw more attention to the car.</div>
-						<img src="../assets/photoeditor/2blur.png" width="533" height="300" />
-						</br></br>
-						<div class="text">We can change the color car as well.</div>
-						<img src="../assets/photoeditor/2blue.png" width="533" height="300" />
-						</br></br>
-						<div class="text">We can remove color from the background to draw even more attention to the car.</div>
-						<img src="../assets/photoeditor/2grayblur.png" width="533" height="300" />
-						</br></br>
-						<hr>
-						<div class="text">Let's take another example (resolution: 3600 x 2400).</div>
-						<img src="../assets/photoeditor/4.jpg" width="533" height="355" />
-						</br></br>
-						<div class="text">We can change the color of the model's clothes to compare and contrast looks (interesting when you try it with your own selfies).</div>
-						<img src="../assets/photoeditor/4red.png" width="533" height="355" />
-						</br></br>
-						<div class="text">Of course this is merely a small subset of the things you can do. Development of other enhancements are in progress.</div>
-					</div>
-					</br></br>
+  </div>
 
-				</div>
-			</div>
-		</div>
-    <script src="../js/jquery.min.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-	</body>
+  <!-- Posts -->
+  <div class="w3-card-2 w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Projects</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <a class="w3-a" href="photoeditor.html">
+				<li class="w3-padding-16">
+					<span class="w3-large">Photo Editor &#38; Enhancer</span><br>
+        	<span class="w3-opacity">Lightweight photo editor</span>
+				</li>
+			</a>
+      <a class="w3-a" href="foregroundextraction.html">
+				<li class="w3-padding-16">
+	        <span class="w3-large">Foreground Extraction</span><br>
+	        <span class="w3-opacity">Segment objects in digital images</span>
+				</li>
+			</a>
+			<a class="w3-a" href="inpainting.html">
+      	<li class="w3-padding-16">
+	        <span class="w3-large">Image Inpainting</span><br>
+	        <span class="w3-opacity">Remove objects in digital images</span>
+      	</li>
+			</a>
+      <a class="w3-a" href="seamcarving.html">
+				<li class="w3-padding-16">
+	        <span class="w3-large">Seam Carving</span><br>
+	        <span class="w3-opacity">Content-aware image resizing</span>
+				</li>
+			</a>
+    </ul>
+  </div>
+
+	<div class="w3-card-2 w3-margin w3-margin-top">
+			<ul class="w3-ul w3-hoverable w3-white">
+				<a class="w3-a" href="../ai_shihan_resume.pdf">
+					<li class="w3-padding-16">
+						<span class="w3-large">Resume</span><br>
+					</li>
+				</a>
+			</ul>
+	</div>
+
+</div>
+
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+	<a style="color: #fff" href="https://github.com/g3aishih" target="_blank">GitHub</a>
+	<a style="color: #fff" href="https://www.linkedin.com/in/aishihan/" target="_blank">LinkedIn</a>
+  <p>Powered by <a style="color: #fff" href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+</body>
 </html>

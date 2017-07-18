@@ -1,133 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Shihan Ai Journal</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<div class="wrapper">
-			<div class="sidebar-wrapper">
-				<ul class="sidebar-nav">
-					<li><a href="./index.html" class="active">Home</a></li>
-					<li data-toggle="collapse" data-target="#projects"><span class="drop">Projects <span class="caret"></span></span></li>
-						<ul id="projects" class="collapse in clean">
-							<li><a href="./html/photoeditor.html">Photo Editor &#38; Enhancer</a></li>
-							<li><a href="./html/foregroundextraction.html">Foreground Extraction</a></li>
-							<li><a href="./html/inpaint.html">Image Inpainting</a></li>
-							<li><a href="./html/seamcarving.html">Seam Carving</a></li>
-						</ul>
+<html>
+<title>Shihan Ai Journal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="css/w3.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32">
+  <h1><b>Shihan Ai</b></h1>
+  <p>H.B.Sc, Computer Science, University of Toronto</p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+      <h3><b>EDUCATION</b></h3>
+      <hr>
+      <h5><b>University of Toronto, H.B.Sc with Distinction in Computer Science</b></h5>
+      <h6 class="w3-opacity">September 2012 - June 2017</h6>
+    </div>
+    <div class="w3-container">
+      <p>Completed a specialist degree in Artificial Intelligence.</p>
+      <p>Coursework focused in Computer Vision and Machine Learning.</p>
+    </div>
+  </div>
+
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+      <h3><b>TECHNICAL SKILLS</b></h3>
+      <hr>
+      <h5><b>Computer Vision &#38; Machine Learning</b></h5>
+      <h6 class="w3-opacity">Python, C++, MATLAB, NumPy, OpenCV, TensorFlow</h6>
+      <h5><b>Web Development</b></h5>
+      <h6 class="w3-opacity">HTML, CSS, JavaScript, NodeJS, React, SQL, MongoDB</h6>
+      <h5><b>Mobile Development</b></h5>
+      <h6 class="w3-opacity">Swift</h6>
+    </div>
+  </div>
+
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+      <h3><b>PROFESSIONAL EXPERIENCE</b></h3>
+      <hr>
+      <h5><b>IBM, Software Engineer Intern</b></h5>
+      <h6 class="w3-opacity">May 2015 - August 2016</h6>
+    </div>
+    <div class="w3-container">
+      <p>Designed the backend of a central analytics platform for IBM dashDB and provided managers with real-time analytics.</p>
+      <p>Developed a tweet scheduler to automate the promotion of IBM DB2 on Twitter.</p>
+      <p>Automated the collection of video analytics from YouTube and generated infographics to understand the data.</p>
+    </div>
+
+    <div class="w3-container">
+      <hr>
+      <h5><b>University of Toronto, Research Assistant</b></h5>
+      <h6 class="w3-opacity">May 2014 - August 2014</h6>
+    </div>
+    <div class="w3-container">
+      <p>Developed a command line tool that attaches semantic meaning to unstructured web data.</p>
+      <p>Created a Twitter bot that responds to movie related tweets with showtimes and recommendations.</p>
+      <p>Performed statistical and lexical analysis on tweets to understand the structure of natural language on social media.</p>
+    </div>
+  </div>
+
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+      <h3><b>PROJECTS</b></h3>
+      <hr>
+      <h5><a href="html/photoeditor.html"><b>Photo Editor &#38; Enhancer</b></a></h5>
+      <h6 class="w3-opacity">July 2017 - Present</h6>
+    </div>
+    <div class="w3-container">
+      <p>Developed a command line tool that can edit and add effects to photos.</p>
+      <p>Tested various smoothing functions and evaluated their effectiveness in achieving a photogenic blurring effect.</p>
+      <p>Implemented color mapping effects to user marked objects in an image by utilizing foreground extraction techniques and the HSV color space.</p>
+      <p>Current working on porting the tool to the iOS mobile platform.</p>
+    </div>
+
+    <div class="w3-container">
+      <hr>
+      <h5><a href="html/foregroundextraction.html"><b>Optimized Interactive Foreground Extraction</b></a></h5>
+      <h6 class="w3-opacity">June 2017 - July 2017</h6>
+    </div>
+    <div class="w3-container">
+      <p>Developed an algorithm that can classify pixels in an image as either the foreground or the background of the image.</p>
+      <p>Independently researched and implemented methods to decrease processing time when processing high resolution photos.</p>
+      <p>Performed benchmark tests against traditional foreground extraction methods such as GrabCut and improved the processing time of 12-Megapixel (3024 x 4032) images from an average of 74 seconds to 3.6 seconds.</p>
+    </div>
+
+    <div class="w3-container">
+      <hr>
+      <h5><a href="html/inpainting.html"><b>Exemplar-Based Image Inpainting</b></a></h5>
+      <h6 class="w3-opacity">May 2017 - June 2017</h6>
+    </div>
+    <div class="w3-container">
+      <p>Independently researched and implemented an algorithm that can crop out user defined areas of an image and fill the cropped-out areas with believable textures.</p>
+      <p>Analyzed and identified the optimal hyper parameters to produce results with little or no optical artifacts.</p>
+      <p>Identified an applied the algorithm to real world applications such as acne removal in photos.</p>
+    </div>
+
+    <div class="w3-container">
+      <hr>
+      <h5><a href="html/seamcarving.html"><b>Seam Carving</b></a></h5>
+      <h6 class="w3-opacity">November 2016 - December 2016</h6>
+    </div>
+    <div class="w3-container">
+      <p>Implemented an algorithm that performs content-aware image resizing by removing seams comprised of the least significant pixels in an image.</p>
+      <p>Identified and tested the effectiveness of various definition of pixel significance.</p>
+    </div>
+  </div>
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card-2 w3-margin w3-margin-top">
+  <img src="assets/banner.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>Shihan Ai</b></h4>
+			<p>Hello, on this website you can read about my technical background and look at my past projects.</p><hr>
+      <p><a href="https://github.com/g3aishih" target="_blank">GitHub</a><br>
+			<a href="https://www.linkedin.com/in/aishihan/" target="_blank">LinkedIn</a><br>
+			<a href="mailto:g3aishih@gmail.com" target="_blank">Email: g3aishih@gmail.com</a></p>
+    </div>
+  </div>
+
+  <!-- Posts -->
+  <div class="w3-card-2 w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Projects</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <a class="w3-a" href="html/photoeditor.html">
+				<li class="w3-padding-16">
+					<span class="w3-large">Photo Editor &#38; Enhancer</span><br>
+        	<span class="w3-opacity">Lightweight photo editor</span>
+				</li>
+			</a>
+      <a class="w3-a" href="html/foregroundextraction.html">
+				<li class="w3-padding-16">
+	        <span class="w3-large">Foreground Extraction</span><br>
+	        <span class="w3-opacity">Segment objects in digital images</span>
+				</li>
+			</a>
+			<a class="w3-a" href="html/inpainting.html">
+      	<li class="w3-padding-16">
+	        <span class="w3-large">Image Inpainting</span><br>
+	        <span class="w3-opacity">Remove objects in digital images</span>
+      	</li>
+			</a>
+      <a class="w3-a" href="html/seamcarving.html">
+				<li class="w3-padding-16">
+	        <span class="w3-large">Seam Carving</span><br>
+	        <span class="w3-opacity">Content-aware image resizing</span>
+				</li>
+			</a>
+    </ul>
+  </div>
+
+	<div class="w3-card-2 w3-margin w3-margin-top">
+			<ul class="w3-ul w3-hoverable w3-white">
+				<a class="w3-a" href="ai_shihan_resume.pdf">
+					<li class="w3-padding-16">
+						<span class="w3-large">Resume</span><br>
 					</li>
-					<li><a href="./ai_shihan_resume.pdf">Resume</a></li>
-					<li><a href="./index.html#contact">Contact</a></li>
-				</ul>
-			</div>
-			<div class="page-content-wrapper">
-				<div class="container-fluid">
+				</a>
+			</ul>
+	</div>
+</div>
 
-					<div class="name inline">Shihan Ai </div>
-					<div class="inline">[<a href="./ai_shihan_resume.pdf"  target="_blank">Resume</a>]</div>
-					<hr>
-					<div class="heading">Education</div>
-					<div class="block">
-						<div class="title">University of Toronto, HBSc with Distinction in Computer Science</div>
-						<div class="time">September 2012 - June 2017</div>
-						<ul>
-							<li class="text">Completed a specialist degree in Artificial Intelligence</li>
-							<li class="text">Coursework focused in Machine Learning and Computer Vision.</li>
-						</ul>
-					</div>
-					</br>
+<!-- END Introduction Menu -->
+</div>
 
-					<div class="heading">Technical Skills</div>
-					<div class="block">
-						<div class="title inline">Computer Vision &#38; Machine Learning:</div>
-						<div class="text inline">Python, C++, MATLAB, NumPy, OpenCV, TensorFlow</div>
-					</div>
-					<div class="block">
-						<div class="title inline">Web Development:</div>
-						<div class="text inline">HTML, CSS, JavaScript, NodeJS, React, SQL, MongoDB</div>
-					</div>
-					<div class="block">
-						<div class="title inline">Mobile Development:</div>
-						<div class="text inline">Swift</div>
-					</div>
-					<ul></ul></br>
+<!-- END GRID -->
+</div><br>
 
-					<div class="heading">Professional Experience</div>
-					<div class="block">
-						<div class="title">IBM, Software Engineer Intern</div>
-						<div class="time">May 2015 - August 2016</div>
-						<ul>
-							<li class="text">Designed the backend of a central analytics platform for IBM dashDB and provided managers with real-time analytics.</li>
-							<li class="text">Developed a tweet scheduler to automate the promotion of IBM DB2 on Twitter.</li>
-							<li class="text">Automated the collection of video analytics from YouTube and generated infographics to understand the data.</li>
-						</ul>
-					</div>
-					<div class="block">
-						<div class="title">University of Toronto, Research Assistant</div>
-						<div class="time">May 2014 - August 2014</div>
-						<ul>
-							<li class="text">Developed a command line tool that attaches semantic meaning to unstructured web data using NLTK.</li>
-							<li class="text">Created a Twitter bot that responds to movie related tweets with showtimes, and recommendations.</li>
-							<li class="text">Performed statistical and lexical analysis on tweets to understand the structure of natural language on social media.</li>
-						</ul>
-					</div>
-					</br>
+<!-- END w3-content -->
+</div>
 
-					<div class="heading">Projects</div>
-					<div class="block">
-						<a href="./html/photoeditor.html" class="title">Photo Editor &#38; Enhancer</a>
-						<div class="time">July 2017 - Present</div>
-						<ul>
-							<li class="text">Developed a command line tool that can edit and add effects to photos.</li>
-							<li class="text">Tested various smoothing functions and evaluated their effectiveness in achieving a photogenic blurring effect.</li>
-							<li class="text">Implemented color mapping effects to user marked objects in an image by utilizing foreground extraction techniques and the HSV color space.</li>
-							<li class="text">Currently working on porting the tool to the iOS mobile platform.</li>
-						</ul>
-					</div>
-					<div class="block">
-						<a href="./html/foregroundextraction.html" class="title">Optimized Interactive Foreground Extraction</a>
-						<div class="time">June 2017 - July 2017</div>
-						<ul>
-							<li class="text">Developed an algorithm that can classify pixels in an image as either the foreground or the background of the image.</li>
-							<li class="text">Independently researched and implemented methods to decrease processing time when processing high resolution photos.</li>
-							<li class="text">Performed benchmark tests against traditional foreground extraction methods such as <a href="https://cvg.ethz.ch/teaching/cvl/2012/grabcut-siggraph04.pdf" target="_blank">GrabCut</a> and improved the processing time of 12-Megapixel (3024 x 4032) images from an average of 74 seconds to 3.6 seconds.</li>
-						</ul>
-					</div>
-					<div class="block">
-						<a href="./html/inpaint.html" class="title">Exemplar-Based Image Inpainting</a>
-						<div class="time">May 2017 - June 2017</div>
-						<ul>
-							<li class="text">Independently researched and implemented an algorithm that can crop out user defined areas of an image and fill the cropped-out areas with believable textures.</li>
-							<li class="text">Analyzed and identified the optimal hyper parameters to produce results with little or no optical artifacts.</li>
-							<li class="text">Identified and applied the algorithm to real world applications such as acne removal in photos.</li>
-						</ul>
-					</div>
-					<div class="block">
-						<a href="./html/seamcarving.html" class="title">Seam Carving</a>
-						<div class="time">November 2016 - December 2016</div>
-						<ul>
-							<li class="text">Implemented an algorithm that performs content-aware image resizing by removing seams comprised of the least significant pixels in an image.</li>
-							<li class="text">Identified and tested the effectiveness of various definitions of pixel significance.</li>
-						</ul>
-					</div>
-					<hr>
-					<div id="contact" class="heading">Contact</div>
-					<div class="block">
-						<a href="mailto:g3aishih@gmail.com" class="inline title">Email</a>
-						<div class="inline title">: g3aishih@gmail.com</div></br>
-						<a href="https://github.com/g3aishih" target="_blank" class="title">GitHub</a></br>
-						<a href="https://www.linkedin.com/in/aishihan/" target="_blank" class="title">LinkedIn</a>
-					</div>
-					<hr>
-					<div class="text">Last updated: July 17 2017</div>
-				</div>
-			</div>
-		</div>
-    <script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-	</body>
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+	<a style="color: #fff" href="https://github.com/g3aishih" target="_blank">GitHub</a>
+	<a style="color: #fff" href="https://www.linkedin.com/in/aishihan/" target="_blank">LinkedIn</a>
+  <p>Powered by <a style="color: #fff" href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+</body>
 </html>
