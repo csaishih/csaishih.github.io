@@ -1,0 +1,79 @@
+.reallybig {
+  font-size: 55px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.date {
+  flex-grow: 1;
+}
+
+.language {
+  color: #fff;
+  padding: 5px 5px;
+  margin: 0px 5px;
+  border-radius: 5px;
+}
+
+.python {
+  background-color: #ccc5b9;
+}
+
+.java {
+  background-color: #775253;
+}
+
+.javascript {
+  background-color: #f8b195;
+}
+
+.go {
+  background-color: #7f5a83;
+}
+
+.node {
+  background-color: #1f7a8c;
+}
+
+.react {
+  background-color: #c06c84;
+}
+
+.redux {
+  background-color: #6c5b7b;
+}
+
+.electron {
+  background-color: #f67280;
+}
+
+.postgres {
+  background-color: #87aeb4;
+}
+
+.mongodb {
+  background-color: #3066be;
+}
+
+.opencv {
+  background-color: #556676;
+}
+
+.numpy {
+  background-color: #c58882;
+}
+
+.nltk {
+  background-color: #b7d7d8;
+}
+
+.db2 {
+  background-color: #ff8984;
+}
+
+.express {
+  background-color: #79a7a8;
+}

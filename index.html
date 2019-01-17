@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-<title>Shihan Ai Journal</title>
+<title>Shihan Ai Portfolio</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/styles.css">
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
@@ -16,7 +17,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- Header -->
 <header class="w3-container w3-center w3-padding-32">
-  <h1><b>Shihan Ai</b></h1>
+  <h1 class="reallybig"><b>Shihan Ai</b></h1>
   <p>H.B.Sc, Computer Science, University of Toronto</p>
 </header>
 
@@ -44,9 +45,9 @@ and is wrapped around the whole page content, except for the footer in this exam
       <h3><b>TECHNICAL SKILLS</b></h3>
       <hr>
       <h5><b>Languages</b></h5>
-      <h6 class="w3-opacity">Python, Java, C++, C, MATLAB, HTML, CSS, JavaScript, SQL, Bash</h6>
+      <h6 class="w3-opacity">Python, Java, JavaScript, Go, SQL, HTML, CSS, MATLAB</h6>
       <h5><b>Technologies</b></h5>
-      <h6 class="w3-opacity">NumPy, OpenCV, TensorFlow, NodeJS, React, MongoDB, MySQL, Git, Docker</h6>
+      <h6 class="w3-opacity">Node, Express, React, Redux, Electron PostgreSQL, DB2, MongoDB, Git, OpenCV, NumPy, NLTK</h6>
     </div>
   </div>
 
@@ -54,11 +55,39 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-container">
       <h3><b>PROFESSIONAL EXPERIENCE</b></h3>
       <hr>
-      <h5><b>IBM, Software Engineer Intern</b></h5>
-      <h6 class="w3-opacity">May 2015 - August 2016</h6>
+      <h5><b>Yaar Inc, Software Engineer</b></h5>
+      <div class="flex">
+        <h6 class="w3-opacity date">Feb 2018 - Present</h6>
+        <div class="language javascript">JavaScript</div>
+        <div class="language electron">Electron</div>
+        <div class="language react">React</div>
+        <div class="language redux">Redux</div>
+        <div class="language postgres">PostgreSQL</div>
+        <div class="language go">Go</div>
+      </div>
     </div>
     <div class="w3-container">
-      <p>Designed the backend of a central analytics platform for IBM dashDB and provided managers with real-time analytics</p>
+      <p>Developed the front-end and back-end of Yaar, an A.I powered team collaboration tool</p>
+      <p>Built the onboarding tool for new users of Yaar</p>
+      <p>Created a tool to collect audio samples from workers on Amazon Mechanical Turk to use as training data for keyword detection models</p>
+      <p>Integrated keyword detection and speaker verification models into Yaar</p>
+    </div>
+
+    <div class="w3-container">
+      <hr>
+      <h5><b>IBM, Software Engineer Intern</b></h5>
+      <div class="flex">
+        <h6 class="w3-opacity date">May 2015 - August 2016</h6>
+        <div class="language python">Python</div>
+        <div class="language javascript">JavaScript</div>
+        <div class="language node">Node</div>
+        <div class="language express">Express</div>
+        <div class="language react">React</div>
+        <div class="language db2">DB2</div>
+      </div>
+    </div>
+    <div class="w3-container">
+      <p>Designed the back-end of a central analytics platform for IBM dashDB and provided managers with real-time analytics</p>
       <p>Developed a tweet scheduler to automate the promotion of IBM DB2 on Twitter</p>
       <p>Automated the collection of video analytics from YouTube and generated infographics to understand the data</p>
     </div>
@@ -66,7 +95,11 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-container">
       <hr>
       <h5><b>University of Toronto, Research Assistant</b></h5>
-      <h6 class="w3-opacity">May 2014 - August 2014</h6>
+      <div class="flex">
+        <h6 class="w3-opacity date">May 2014 - August 2014</h6>
+        <div class="language python">Python</div>
+        <div class="language nltk">NLTK</div>
+      </div>
     </div>
     <div class="w3-container">
       <p>Developed a command line tool that attaches semantic meaning to unstructured web data</p>
@@ -80,19 +113,28 @@ and is wrapped around the whole page content, except for the footer in this exam
       <h3><b>PROJECTS</b></h3>
       <hr>
       <h5><a href="html/photoenhancer.html"><b>Photo Enhancer</b></a></h5>
-      <h6 class="w3-opacity">July 2017 - Present</h6>
+      <div class="flex">
+        <h6 class="w3-opacity date">July 2017 - Aug 2018</h6>
+        <div class="language python">Python</div>
+        <div class="language numpy">NumPy</div>
+        <div class="language opencv">OpenCV</div>
+      </div>
     </div>
     <div class="w3-container">
       <p>Created a command line tool that can add various visual effects to digital photos</p>
       <p>Tested various smoothing functions and evaluated their effectiveness in achieving a photogenic blurring effect</p>
       <p>Implemented color mapping effects to user marked objects in an image by utilizing foreground extraction techniques and the HSV color space</p>
-      <p>Current working on porting the tool to the iOS mobile platform</p>
     </div>
 
     <div class="w3-container">
       <hr>
       <h5><a href="html/foregroundextraction.html"><b>Optimized Interactive Foreground Extraction</b></a></h5>
-      <h6 class="w3-opacity">June 2017 - July 2017</h6>
+      <div class="flex">
+        <h6 class="w3-opacity date">June 2017 - July 2017</h6>
+        <div class="language python">Python</div>
+        <div class="language numpy">NumPy</div>
+        <div class="language opencv">OpenCV</div>
+      </div>
     </div>
     <div class="w3-container">
       <p>Engineered an algorithm that can classify pixels in an image as either the foreground or the background of the image</p>
@@ -103,7 +145,12 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-container">
       <hr>
       <h5><a href="html/inpainting.html"><b>Exemplar-Based Image Inpainting</b></a></h5>
-      <h6 class="w3-opacity">May 2017 - June 2017</h6>
+      <div class="flex">
+        <h6 class="w3-opacity date">May 2017 - June 2017</h6>
+        <div class="language python">Python</div>
+        <div class="language numpy">NumPy</div>
+        <div class="language opencv">OpenCV</div>
+      </div>
     </div>
     <div class="w3-container">
       <p>Independently researched and implemented an algorithm that can crop out user defined areas of an image and fill the cropped-out areas with believable textures</p>
@@ -114,22 +161,16 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-container">
       <hr>
       <h5><a href="html/seamcarving.html"><b>Seam Carving</b></a></h5>
-      <h6 class="w3-opacity">November 2016 - December 2016</h6>
+      <div class="flex">
+        <h6 class="w3-opacity date">November 2016 - December 2016</h6>
+        <div class="language python">Python</div>
+        <div class="language numpy">NumPy</div>
+        <div class="language opencv">OpenCV</div>
+      </div>
     </div>
     <div class="w3-container">
       <p>Implemented an algorithm that performs content-aware image resizing by removing seams comprised of the least significant pixels in an image</p>
       <p>Performed tests to measure the effectiveness of various definitions of pixel significance and concluded that using the image gradient produced the best results</p>
-    </div>
-
-    <div class="w3-container">
-      <hr>
-      <h5><b>Image Classification Kaggle Competition</b></h5>
-      <h6 class="w3-opacity">November 2016 - December 2016</h6>
-    </div>
-    <div class="w3-container">
-      <p>Created an image classifier with transfer learning by retraining the classification layer of Google's Inception to classify images of structures, indoors, people, animals, plants, food, cars, and seas</p>
-      <p>Trained the CNN with 7000 test images and experimented with hyper-parameters to achieve a peak accuracy of 83% on the validation set</p>
-      <p>Tested the CNN with 2970 test images and achieved an accuracy of 78.9% and placed top 15% in the Kaggle competition</p>
     </div>
   </div>
 <!-- END BLOG ENTRIES -->
@@ -147,6 +188,16 @@ and is wrapped around the whole page content, except for the footer in this exam
 			<a href="https://www.linkedin.com/in/aishihan/" target="_blank">LinkedIn</a><br>
 			<a href="mailto:g3aishih@gmail.com" target="_blank">Email: g3aishih@gmail.com</a></p>
     </div>
+  </div>
+
+  <div class="w3-card-2 w3-margin w3-margin-top">
+      <ul class="w3-ul w3-hoverable w3-white">
+        <a class="w3-a" target="_blank" href="ai_shihan_resume.pdf">
+          <li class="w3-padding-16">
+            <span class="w3-large">Resume</span><br>
+          </li>
+        </a>
+      </ul>
   </div>
 
   <!-- Posts -->
@@ -181,16 +232,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 			</a>
     </ul>
   </div>
-
-	<div class="w3-card-2 w3-margin w3-margin-top">
-			<ul class="w3-ul w3-hoverable w3-white">
-				<a class="w3-a" href="ai_shihan_resume.pdf">
-					<li class="w3-padding-16">
-						<span class="w3-large">Resume</span><br>
-					</li>
-				</a>
-			</ul>
-	</div>
 </div>
 
 <!-- END Introduction Menu -->
