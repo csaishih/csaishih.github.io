@@ -1,254 +1,367 @@
 <!DOCTYPE html>
 <html>
-<title>Shihan Ai Portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="css/w3.css">
-<link rel="stylesheet" href="css/styles.css">
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey">
+  <title>Shihan Ai Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Raleway"
+  />
+  <link rel="stylesheet" href="css/w3.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Raleway", sans-serif;
+    }
+  </style>
+  <body class="w3-light-grey">
+    <div class="w3-content" style="max-width: 1400px">
+      <!-- Header -->
+      <header class="w3-container w3-center w3-padding-32">
+        <h1 class="reallybig"><b>Shihan Ai</b></h1>
+        <p>Senior Software Engineer</p>
+      </header>
 
-<!-- w3-content defines a container for fixed size centered content,
-and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1400px">
+      <!-- Grid -->
+      <div class="w3-row">
+        <!-- Blog entries -->
+        <div class="w3-col l8 s12">
+          <!-- Blog entry -->
 
-<!-- Header -->
-<header class="w3-container w3-center w3-padding-32">
-  <h1 class="reallybig"><b>Shihan Ai</b></h1>
-  <p>H.B.Sc, Computer Science, University of Toronto</p>
-</header>
+          <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+              <h3><b>PROFESSIONAL EXPERIENCE</b></h3>
+              <hr />
+              <h5><b>Yaar Inc, Software Engineer</b></h5>
+              <div class="flex">
+                <h6 class="w3-opacity date">Feb 2018 - <i>Present</i></h6>
+                <div class="language javascript">JavaScript</div>
+                <div class="language electron">Electron</div>
+                <div class="language react">React</div>
+                <div class="language redux">Redux</div>
+                <div class="language postgres">PostgreSQL</div>
+                <div class="language go">Go</div>
+              </div>
+            </div>
+            <div class="w3-container">
+              <p>
+                Developed the front-end and back-end of Yaar, an A.I powered
+                team collaboration tool
+              </p>
+              <p>Built the onboarding tool for new users of Yaar</p>
+              <p>
+                Created a tool to collect audio samples from workers on Amazon
+                Mechanical Turk to use as training data for keyword detection
+                models
+              </p>
+              <p>
+                Integrated keyword detection and speaker verification models
+                into Yaar
+              </p>
+            </div>
 
-<!-- Grid -->
-<div class="w3-row">
+            <div class="w3-container">
+              <hr />
+              <h5><b>IBM, Software Engineer Intern</b></h5>
+              <div class="flex">
+                <h6 class="w3-opacity date">May 2015 - Aug 2016</h6>
+                <div class="language python">Python</div>
+                <div class="language javascript">JavaScript</div>
+                <div class="language node">Node</div>
+                <div class="language express">Express</div>
+                <div class="language react">React</div>
+                <div class="language db2">DB2</div>
+              </div>
+            </div>
+            <div class="w3-container">
+              <p>
+                Designed the back-end of a central analytics platform for IBM
+                dashDB and provided managers with real-time analytics
+              </p>
+              <p>
+                Developed a tweet scheduler to automate the promotion of IBM DB2
+                on Twitter
+              </p>
+              <p>
+                Automated the collection of video analytics from YouTube and
+                generated infographics to understand the data
+              </p>
+            </div>
 
-<!-- Blog entries -->
-<div class="w3-col l8 s12">
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>EDUCATION</b></h3>
-      <hr>
-      <h5><b>University of Toronto, H.B.Sc with Distinction in Computer Science</b></h5>
-      <h6 class="w3-opacity">September 2012 - June 2017</h6>
-    </div>
-    <div class="w3-container">
-      <p>Completed a specialist degree in Artificial Intelligence</p>
-      <p>Coursework focused in Computer Vision and Machine Learning</p>
-    </div>
-  </div>
+            <div class="w3-container">
+              <hr />
+              <h5><b>University of Toronto, Research Assistant</b></h5>
+              <div class="flex">
+                <h6 class="w3-opacity date">May 2014 - Aug 2014</h6>
+                <div class="language python">Python</div>
+                <div class="language nltk">NLTK</div>
+              </div>
+            </div>
+            <div class="w3-container">
+              <p>
+                Developed a command line tool that attaches semantic meaning to
+                unstructured web data
+              </p>
+              <p>
+                Built a Twitter bot that responds to movie related tweets with
+                showtimes and recommendations
+              </p>
+              <p>
+                Performed statistical and lexical analysis on tweets to
+                understand the structure of natural language on social media
+              </p>
+            </div>
+          </div>
 
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>TECHNICAL SKILLS</b></h3>
-      <hr>
-      <h5><b>Languages</b></h5>
-      <h6 class="w3-opacity">Python, Java, JavaScript, Go, SQL, HTML, CSS, MATLAB</h6>
-      <h5><b>Technologies</b></h5>
-      <h6 class="w3-opacity">Node, Express, React, Redux, Electron, PostgreSQL, DB2, MongoDB, Git, OpenCV, NumPy, NLTK</h6>
-    </div>
-  </div>
+          <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+              <h3><b>PROJECTS</b></h3>
+              <hr />
+              <h5>
+                <a href="html/photoenhancer.html"><b>Photo Enhancer</b></a>
+              </h5>
+              <div class="flex">
+                <h6 class="w3-opacity date">July 2017 - Aug 2018</h6>
+                <div class="language python">Python</div>
+                <div class="language numpy">NumPy</div>
+                <div class="language opencv">OpenCV</div>
+              </div>
+            </div>
+            <div class="w3-container">
+              <p>
+                Created a command line tool that can add various visual effects
+                to digital photos
+              </p>
+              <p>
+                Tested various smoothing functions and evaluated their
+                effectiveness in achieving a photogenic blurring effect
+              </p>
+              <p>
+                Implemented color mapping effects to user marked objects in an
+                image by utilizing foreground extraction techniques and the HSV
+                color space
+              </p>
+            </div>
 
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>PROFESSIONAL EXPERIENCE</b></h3>
-      <hr>
-      <h5><b>Yaar Inc, Software Engineer</b></h5>
-      <div class="flex">
-        <h6 class="w3-opacity date">Feb 2018 - <i>Present</i></h6>
-        <div class="language javascript">JavaScript</div>
-        <div class="language electron">Electron</div>
-        <div class="language react">React</div>
-        <div class="language redux">Redux</div>
-        <div class="language postgres">PostgreSQL</div>
-        <div class="language go">Go</div>
+            <div class="w3-container">
+              <hr />
+              <h5>
+                <a href="html/foregroundextraction.html"
+                  ><b>Optimized Interactive Foreground Extraction</b></a
+                >
+              </h5>
+              <div class="flex">
+                <h6 class="w3-opacity date">June 2017 - July 2017</h6>
+                <div class="language python">Python</div>
+                <div class="language numpy">NumPy</div>
+                <div class="language opencv">OpenCV</div>
+              </div>
+            </div>
+            <div class="w3-container">
+              <p>
+                Engineered an algorithm that can classify pixels in an image as
+                either the foreground or the background of the image
+              </p>
+              <p>
+                Independently researched and implemented methods to decrease
+                processing time when processing high resolution photos
+              </p>
+              <p>
+                Performed benchmark tests against traditional foreground
+                extraction methods such as GrabCut and improved the processing
+                time of 12-Megapixel (3024 x 4032) images from an average of 74
+                seconds to 3.6 seconds
+              </p>
+            </div>
+
+            <div class="w3-container">
+              <hr />
+              <h5>
+                <a href="html/inpainting.html"><b>Selfie Acne Remover</b></a>
+              </h5>
+              <div class="flex">
+                <h6 class="w3-opacity date">May 2017 - June 2017</h6>
+                <div class="language python">Python</div>
+                <div class="language numpy">NumPy</div>
+                <div class="language opencv">OpenCV</div>
+              </div>
+            </div>
+            <div class="w3-container">
+              <p>
+                Independently researched and implemented an algorithm that can
+                crop out user defined areas of an image and fill the cropped-out
+                areas with believable textures
+              </p>
+              <p>
+                Analyzed and identified the optimal hyper parameters and
+                produced results with little or no optical artifacts
+              </p>
+            </div>
+
+            <div class="w3-container">
+              <hr />
+              <h5>
+                <a href="html/seamcarving.html"><b>Smart Image Resizing</b></a>
+              </h5>
+              <div class="flex">
+                <h6 class="w3-opacity date">Nov 2016 - Dec 2016</h6>
+                <div class="language python">Python</div>
+                <div class="language numpy">NumPy</div>
+                <div class="language opencv">OpenCV</div>
+              </div>
+            </div>
+            <div class="w3-container">
+              <p>
+                Implemented an algorithm that performs content-aware image
+                resizing by removing seams comprised of the least significant
+                pixels in an image
+              </p>
+              <p>
+                Performed tests to measure the effectiveness of various
+                definitions of pixel significance and concluded that using the
+                image gradient produced the best results
+              </p>
+            </div>
+          </div>
+
+          <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+              <h3><b>TECHNICAL SKILLS</b></h3>
+              <hr />
+              <h5><b>Proficient</b></h5>
+              <h6 class="w3-opacity">
+                Python, JavaScript, HTML/CSS, React, React-Native, Redux,
+                Node.js, Electron, Expo, SQL, Git
+              </h6>
+              <h5><b>Working Proficiency</b></h5>
+              <h6 class="w3-opacity">
+                Java, Swift, Objective-C, Golang, C++, C Docker, AWS
+              </h6>
+            </div>
+          </div>
+
+          <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+              <h3><b>EDUCATION</b></h3>
+              <hr />
+              <h5>
+                <b
+                  >University of Toronto, H.B.Sc with Distinction in Computer
+                  Science</b
+                >
+              </h5>
+              <h6 class="w3-opacity">September 2012 - June 2017</h6>
+            </div>
+            <div class="w3-container">
+              <p>Completed a specialist degree in Artificial Intelligence</p>
+              <p>Coursework focused in Computer Vision and Machine Learning</p>
+            </div>
+          </div>
+
+          <!-- END BLOG ENTRIES -->
+        </div>
+
+        <!-- Introduction menu -->
+        <div class="w3-col l4">
+          <!-- About Card -->
+          <div class="w3-card-2 w3-margin w3-margin-top">
+            <img src="assets/banner.jpg" style="width: 100%" />
+            <div class="w3-container w3-white">
+              <h4><b>Shihan Ai</b></h4>
+              <p>
+                <a href="https://github.comcsaishih" target="_blank">GitHub</a
+                ><br />
+                <a href="https://www.linkedin.com/in/aishihan/" target="_blank"
+                  >LinkedIn</a
+                ><br />
+                <a href="mailto:csaishih@gmail.com" target="_blank"
+                  >Email: csaishih@gmail.com</a
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="w3-card-2 w3-margin w3-margin-top">
+            <ul class="w3-ul w3-hoverable w3-white">
+              <a class="w3-a" target="_blank" href="ai_shihan_resume.pdf">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Resume</span><br />
+                </li>
+              </a>
+            </ul>
+          </div>
+
+          <!-- Posts -->
+          <div class="w3-card-2 w3-margin">
+            <div class="w3-container w3-padding">
+              <h4>Projects</h4>
+            </div>
+            <ul class="w3-ul w3-hoverable w3-white">
+              <a class="w3-a" href="html/photoenhancer.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Photo Enhancer</span><br />
+                  <span class="w3-opacity">Lightweight photo enhancer</span>
+                </li>
+              </a>
+              <a class="w3-a" href="html/foregroundextraction.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Photo Foreground Extraction</span
+                  ><br />
+                  <span class="w3-opacity">Detect the subject of an image</span>
+                </li>
+              </a>
+              <a class="w3-a" href="html/inpainting.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Selfie Acne Remover</span><br />
+                  <span class="w3-opacity"
+                    >Magically remove areas in an image</span
+                  >
+                </li>
+              </a>
+              <a class="w3-a" href="html/seamcarving.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Smart Image Resizing</span><br />
+                  <span class="w3-opacity">Content-aware image resizing</span>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+
+        <!-- END Introduction Menu -->
       </div>
-    </div>
-    <div class="w3-container">
-      <p>Developed the front-end and back-end of Yaar, an A.I powered team collaboration tool</p>
-      <p>Built the onboarding tool for new users of Yaar</p>
-      <p>Created a tool to collect audio samples from workers on Amazon Mechanical Turk to use as training data for keyword detection models</p>
-      <p>Integrated keyword detection and speaker verification models into Yaar</p>
-    </div>
 
-    <div class="w3-container">
-      <hr>
-      <h5><b>IBM, Software Engineer Intern</b></h5>
-      <div class="flex">
-        <h6 class="w3-opacity date">May 2015 - Aug 2016</h6>
-        <div class="language python">Python</div>
-        <div class="language javascript">JavaScript</div>
-        <div class="language node">Node</div>
-        <div class="language express">Express</div>
-        <div class="language react">React</div>
-        <div class="language db2">DB2</div>
-      </div>
+      <!-- END GRID -->
     </div>
-    <div class="w3-container">
-      <p>Designed the back-end of a central analytics platform for IBM dashDB and provided managers with real-time analytics</p>
-      <p>Developed a tweet scheduler to automate the promotion of IBM DB2 on Twitter</p>
-      <p>Automated the collection of video analytics from YouTube and generated infographics to understand the data</p>
-    </div>
+    <br />
 
-    <div class="w3-container">
-      <hr>
-      <h5><b>University of Toronto, Research Assistant</b></h5>
-      <div class="flex">
-        <h6 class="w3-opacity date">May 2014 - Aug 2014</h6>
-        <div class="language python">Python</div>
-        <div class="language nltk">NLTK</div>
-      </div>
-    </div>
-    <div class="w3-container">
-      <p>Developed a command line tool that attaches semantic meaning to unstructured web data</p>
-      <p>Built a Twitter bot that responds to movie related tweets with showtimes and recommendations</p>
-      <p>Performed statistical and lexical analysis on tweets to understand the structure of natural language on social media</p>
-    </div>
-  </div>
+    <!-- END w3-content -->
 
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>PROJECTS</b></h3>
-      <hr>
-      <h5><a href="html/photoenhancer.html"><b>Photo Enhancer</b></a></h5>
-      <div class="flex">
-        <h6 class="w3-opacity date">July 2017 - Aug 2018</h6>
-        <div class="language python">Python</div>
-        <div class="language numpy">NumPy</div>
-        <div class="language opencv">OpenCV</div>
-      </div>
-    </div>
-    <div class="w3-container">
-      <p>Created a command line tool that can add various visual effects to digital photos</p>
-      <p>Tested various smoothing functions and evaluated their effectiveness in achieving a photogenic blurring effect</p>
-      <p>Implemented color mapping effects to user marked objects in an image by utilizing foreground extraction techniques and the HSV color space</p>
-    </div>
-
-    <div class="w3-container">
-      <hr>
-      <h5><a href="html/foregroundextraction.html"><b>Optimized Interactive Foreground Extraction</b></a></h5>
-      <div class="flex">
-        <h6 class="w3-opacity date">June 2017 - July 2017</h6>
-        <div class="language python">Python</div>
-        <div class="language numpy">NumPy</div>
-        <div class="language opencv">OpenCV</div>
-      </div>
-    </div>
-    <div class="w3-container">
-      <p>Engineered an algorithm that can classify pixels in an image as either the foreground or the background of the image</p>
-      <p>Independently researched and implemented methods to decrease processing time when processing high resolution photos</p>
-      <p>Performed benchmark tests against traditional foreground extraction methods such as GrabCut and improved the processing time of 12-Megapixel (3024 x 4032) images from an average of 74 seconds to 3.6 seconds</p>
-    </div>
-
-    <div class="w3-container">
-      <hr>
-      <h5><a href="html/inpainting.html"><b>Exemplar-Based Image Inpainting</b></a></h5>
-      <div class="flex">
-        <h6 class="w3-opacity date">May 2017 - June 2017</h6>
-        <div class="language python">Python</div>
-        <div class="language numpy">NumPy</div>
-        <div class="language opencv">OpenCV</div>
-      </div>
-    </div>
-    <div class="w3-container">
-      <p>Independently researched and implemented an algorithm that can crop out user defined areas of an image and fill the cropped-out areas with believable textures</p>
-      <p>Analyzed and identified the optimal hyper parameters and produced results with little or no optical artifacts</p>
-      <p>Identified an applied the algorithm to real world applications such as acne removal in photos</p>
-    </div>
-
-    <div class="w3-container">
-      <hr>
-      <h5><a href="html/seamcarving.html"><b>Seam Carving</b></a></h5>
-      <div class="flex">
-        <h6 class="w3-opacity date">Nov 2016 - Dec 2016</h6>
-        <div class="language python">Python</div>
-        <div class="language numpy">NumPy</div>
-        <div class="language opencv">OpenCV</div>
-      </div>
-    </div>
-    <div class="w3-container">
-      <p>Implemented an algorithm that performs content-aware image resizing by removing seams comprised of the least significant pixels in an image</p>
-      <p>Performed tests to measure the effectiveness of various definitions of pixel significance and concluded that using the image gradient produced the best results</p>
-    </div>
-  </div>
-<!-- END BLOG ENTRIES -->
-</div>
-
-<!-- Introduction menu -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card-2 w3-margin w3-margin-top">
-  <img src="assets/banner.jpg" style="width:100%">
-    <div class="w3-container w3-white">
-      <h4><b>Shihan Ai</b></h4>
-			<p>Hello, on this website you can read about my technical background and look at my past projects.</p><hr>
-      <p><a href="https://github.com/g3aishih" target="_blank">GitHub</a><br>
-			<a href="https://www.linkedin.com/in/aishihan/" target="_blank">LinkedIn</a><br>
-			<a href="mailto:g3aishih@gmail.com" target="_blank">Email: g3aishih@gmail.com</a></p>
-    </div>
-  </div>
-
-  <div class="w3-card-2 w3-margin w3-margin-top">
-      <ul class="w3-ul w3-hoverable w3-white">
-        <a class="w3-a" target="_blank" href="ai_shihan_resume.pdf">
-          <li class="w3-padding-16">
-            <span class="w3-large">Resume</span><br>
-          </li>
-        </a>
-      </ul>
-  </div>
-
-  <!-- Posts -->
-  <div class="w3-card-2 w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Projects</h4>
-    </div>
-    <ul class="w3-ul w3-hoverable w3-white">
-      <a class="w3-a" href="html/photoenhancer.html">
-				<li class="w3-padding-16">
-					<span class="w3-large">Photo Enhancer</span><br>
-        	<span class="w3-opacity">Lightweight photo enhancer</span>
-				</li>
-			</a>
-      <a class="w3-a" href="html/foregroundextraction.html">
-				<li class="w3-padding-16">
-	        <span class="w3-large">Foreground Extraction</span><br>
-	        <span class="w3-opacity">Segment objects in digital images</span>
-				</li>
-			</a>
-			<a class="w3-a" href="html/inpainting.html">
-      	<li class="w3-padding-16">
-	        <span class="w3-large">Image Inpainting</span><br>
-	        <span class="w3-opacity">Remove objects in digital images</span>
-      	</li>
-			</a>
-      <a class="w3-a" href="html/seamcarving.html">
-				<li class="w3-padding-16">
-	        <span class="w3-large">Seam Carving</span><br>
-	        <span class="w3-opacity">Content-aware image resizing</span>
-				</li>
-			</a>
-    </ul>
-  </div>
-</div>
-
-<!-- END Introduction Menu -->
-</div>
-
-<!-- END GRID -->
-</div><br>
-
-<!-- END w3-content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-	<a style="color: #fff" href="https://github.com/g3aishih" target="_blank">GitHub</a>
-	<a style="color: #fff" href="https://www.linkedin.com/in/aishihan/" target="_blank">LinkedIn</a>
-  <p>Powered by <a style="color: #fff" href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
-
-</body>
+    <!-- Footer -->
+    <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+      <a style="color: #fff" href="https://github.com/csaishih" target="_blank"
+        >GitHub</a
+      >
+      <a
+        style="color: #fff"
+        href="https://www.linkedin.com/in/aishihan/"
+        target="_blank"
+        >LinkedIn</a
+      >
+      <p>
+        Powered by
+        <a
+          style="color: #fff"
+          href="https://www.w3schools.com/w3css/default.asp"
+          target="_blank"
+          >w3.css</a
+        >
+      </p>
+    </footer>
+  </body>
 </html>

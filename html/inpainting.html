@@ -50,7 +50,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 			<img src="../assets/inpaint/sourceworks.png" alt="sourceworks" />
 			<img src="../assets/inpaint/mask.png" alt="mask" /></br></br>
 
-			<p>Given the region we want to remove, we find its contour with OpenCV's <a href="http://docs.opencv.org/2.4/modules/imgproc/doc/structural_analysis_and_shape_descriptors.html?highlight=findcontours#findcontours" target="_blank">findContours</a> function. For each point on the contour, we create a <a href="https://github.com/g3aishih/image-inpainting/blob/master/patch.py">Patch</a> object to represent a 9x9 patch of the image with the contour point as the center of the patch. We select one of these patches and replace it with the most similar patch from &Phi;. After we replace the patch, we update the contour and determine the patches on the contour that still need to be replaced, another patch is selected and the process repeats until all patches are replaced. The process is shown below with the patch on the contour shown in red and the most similar patch shown in green.</p>
+			<p>Given the region we want to remove, we find its contour with OpenCV's <a href="http://docs.opencv.org/2.4/modules/imgproc/doc/structural_analysis_and_shape_descriptors.html?highlight=findcontours#findcontours" target="_blank">findContours</a> function. For each point on the contour, we create a <a href="https://github.com/csaishih/photo-acne-remover-image-inpainting/blob/master/patch.py">Patch</a> object to represent a 9x9 patch of the image with the contour point as the center of the patch. We select one of these patches and replace it with the most similar patch from &Phi;. After we replace the patch, we update the contour and determine the patches on the contour that still need to be replaced, another patch is selected and the process repeats until all patches are replaced. The process is shown below with the patch on the contour shown in red and the most similar patch shown in green.</p>
 			<img src="../assets/inpaint/algo_animation.gif" alt="animation" /></br></br>
 
 			<p>Each patch is assigned a priority value so that the patch to be replaced is not selected at random. The priority value is the product of two terms, the confidence term denoted C, and the data term denoted D, and they are defined as follows:</p>
@@ -68,7 +68,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-container">
       <h3><b>GET THE CODE</b></h3>
       <hr>
-			<p>The code is available on <a href="https://github.com/g3aishih/image-inpainting" target="_blank">GitHub</a></p>
+			<p>The code is available on <a href="https://github.com/csaishih/photo-acne-remover-image-inpainting" target="_blank">GitHub</a></p>
     </div>
   </div>
 
@@ -145,7 +145,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- Footer -->
 <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-	<a style="color: #fff" href="https://github.com/g3aishih" target="_blank">GitHub</a>
+	<a style="color: #fff" href="https://github.com/csaishih" target="_blank">GitHub</a>
 	<a style="color: #fff" href="https://www.linkedin.com/in/aishihan/" target="_blank">LinkedIn</a>
   <p>Powered by <a style="color: #fff" href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
