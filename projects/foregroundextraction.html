@@ -1,152 +1,283 @@
 <!DOCTYPE html>
 <html>
-<title>Shihan Ai Portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="../css/w3.css">
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey">
-
-<!-- w3-content defines a container for fixed size centered content,
+  <title>Shihan Ai Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Raleway"
+  />
+  <link rel="stylesheet" href="../css/w3.css" />
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Raleway", sans-serif;
+    }
+  </style>
+  <body class="w3-light-grey">
+    <!-- w3-content defines a container for fixed size centered content,
 and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1400px">
+    <div class="w3-content" style="max-width: 1400px">
+      <!-- Header -->
+      <header class="w3-container w3-center w3-padding-32">
+        <h1><b>Foreground Extraction</b></h1>
+        <p>Segment objects in digital images</p>
+      </header>
 
-<!-- Header -->
-<header class="w3-container w3-center w3-padding-32">
-  <h1><b>Foreground Extraction</b></h1>
-  <p>Segment objects in digital images</p>
-</header>
+      <!-- Grid -->
+      <div class="w3-row">
+        <!-- Blog entries -->
+        <div class="w3-col l8 s12">
+          <!-- Blog entry -->
+          <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+              <h3><b>WHAT IT DOES</b></h3>
+              <hr />
+              <p>
+                This project implements an algorithm that can classify pixels in
+                an image as either the foreground, or the background of the
+                image. The algorithm builds on top of the
+                <a
+                  href="http://docs.opencv.org/3.1.0/d8/d83/tutorial_py_grabcut.html"
+                  target="_blank"
+                  >GrabCut</a
+                >
+                algorithm and is optimized to run on high resolution images. The
+                research behind the GrabCut algorithm can be found
+                <a
+                  href="https://cvg.ethz.ch/teaching/cvl/2012/grabcut-siggraph04.pdf"
+                  target="_blank"
+                  >here</a
+                >.
+              </p>
 
-<!-- Grid -->
-<div class="w3-row">
+              <p>
+                We mark the 12-Megapixel source image (image A) with foreground
+                seeds (green) and background seeds (red) to guide the algorithm.
+                We are telling the algorithm that the pixels marked in green are
+                guaranteed to be a part of the foreground and that the pixels
+                marked in red are guaranteed to be a part of the background and
+                it is up to the algorithm to figure out the rest. The algorithm
+                outputs a mask (image B) where white pixels indicate foreground
+                pixels and black pixels indicate background pixels. We use the
+                mask to produce the segmented object (image C).
+              </p>
+              <img
+                src="../assets/foreground_extraction/marked.png"
+                width="300"
+                height="400"
+              />
+              <img
+                src="../assets/foreground_extraction/out_refinedMask.png"
+                width="300"
+                height="400"
+              />
+              <img
+                src="../assets/foreground_extraction/out.png"
+                width="300"
+                height="400"
+              /><br /><br />
 
-<!-- Blog entries -->
-<div class="w3-col l8 s12">
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>WHAT IT DOES</b></h3>
-      <hr>
-			<p>This project implements an algorithm that can classify pixels in an image as either the foreground, or the background of the image. The algorithm builds on top of the <a href="http://docs.opencv.org/3.1.0/d8/d83/tutorial_py_grabcut.html" target="_blank">GrabCut</a> algorithm and is optimized to run on high resolution images. The research behind the GrabCut algorithm can be found <a href="https://cvg.ethz.ch/teaching/cvl/2012/grabcut-siggraph04.pdf" target="_blank">here</a>.</p>
+              <p>
+                Running the
+                <a
+                  href="http://docs.opencv.org/3.1.0/d8/d83/tutorial_py_grabcut.html"
+                  target="_blank"
+                  >GrabCut</a
+                >
+                algorithm on the 12-Megapixel (3024 x 4032) image takes an
+                average of 73 seconds on a 2.7GhZ Quad Core i7 MacBook Pro, the
+                output is shown below. Running the optimized algorithm takes an
+                average of 3.5 seconds on the same machine.
+              </p>
+              <img
+                src="../assets/foreground_extraction/unoptimized.png"
+                width="300"
+                height="400"
+              /><br /><br />
+            </div>
+          </div>
 
-			<p>We mark the 12-Megapixel source image (image A) with foreground seeds (green) and background seeds (red) to guide the algorithm. We are telling the algorithm that the pixels marked in green are guaranteed to be a part of the foreground and that the pixels marked in red are guaranteed to be a part of the background and it is up to the algorithm to figure out the rest. The algorithm outputs a mask (image B) where white pixels indicate foreground pixels and black pixels indicate background pixels. We use the mask to produce the segmented object (image C).</p>
-			<img src="../assets/foreground_extraction/marked.png" width="300" height="400" />
-			<img src="../assets/foreground_extraction/out_refinedMask.png" width="300" height="400" />
-			<img src="../assets/foreground_extraction/out.png" width="300" height="400" /></br></br>
+          <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+              <h3><b>HOW IT WORKS</b></h3>
+              <hr />
+              <p>
+                The algorithm is broken down into two steps, the first step is
+                to obtain a rough mask of the object by using the GrabCut
+                algorithm on a downsampled version of the image, then upsampling
+                the result back into the image's original resolution, and the
+                second step is to refine the mask. The output of the first step
+                is shown below.
+              </p>
+              <img
+                src="../assets/foreground_extraction/closeup.png"
+                width="475"
+                height="400"
+              /><br /><br />
 
-			<p>Running the <a href="http://docs.opencv.org/3.1.0/d8/d83/tutorial_py_grabcut.html" target="_blank">GrabCut</a> algorithm on the 12-Megapixel (3024 x 4032) image takes an average of 73 seconds on a 2.7GhZ Quad Core i7 MacBook Pro, the output is shown below. Running the optimized algorithm takes an average of 3.5 seconds on the same machine.</p>
-			<img src="../assets/foreground_extraction/unoptimized.png" width="300" height="400" /></br></br>
+              <p>
+                To refine the mask, first we refine the foreground and
+                background seeds for the image. This can be done by finding the
+                contours of the eroded and dilated versions of the rough mask.
+                The refined foreground seed (green), the refined background seed
+                (blue), and the contour of the rough mask (red) are shown below.
+              </p>
+              <img
+                src="../assets/foreground_extraction/contourcloseup.png"
+                width="450"
+                height="430"
+              /><br /><br />
+
+              <p>
+                Next, we inspect overlapping patches along the contour of the
+                rough mask and classify each pixel in the patch as either
+                foreground or background with the help of the refined seeds. In
+                the patch, some pixels will be marked by the foreground seed and
+                some by the background seed, our job is to classify all unmarked
+                pixels based on two metrics, difference in color intensity and
+                difference in location.
+              </p>
+
+              <p>
+                First we find the average color intensity of all the foreground
+                seeded pixels and the average color intensity of all the
+                background seeded pixels in the patch, then we look at each
+                unmarked pixel in the patch and determine whether it is closer
+                the foreground color or background color in the RGB color space.
+                Next, we cluster the foreground and background pixels, find
+                their centers, and look at each unmarked pixel and determine
+                whether it is closer to the foreground or background in the
+                image space. We take these two metrics and add them up to
+                determine the total distance (in terms of color and location)
+                between the pixel and either class, and finally we assign the
+                pixel to the class with the smaller distance.
+              </p>
+
+              <p>
+                To speed up computation, four threads are spawned to allow
+                concurrent processing. The result of the refinement step is
+                shown below.
+              </p>
+              <img
+                src="../assets/foreground_extraction/closeuprefined.png"
+                width="475"
+                height="400"
+              /><br /><br />
+            </div>
+          </div>
+
+          <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+              <h3><b>GET THE CODE</b></h3>
+              <hr />
+              <p>
+                The code is available on
+                <a
+                  href="https://github.com/csaishih/foreground-extraction"
+                  target="_blank"
+                  >GitHub</a
+                >
+              </p>
+            </div>
+          </div>
+          <!-- END BLOG ENTRIES -->
+        </div>
+
+        <!-- Introduction menu -->
+        <div class="w3-col l4">
+          <!-- About Card -->
+          <div class="w3-card-2 w3-margin w3-margin-top">
+            <ul class="w3-ul w3-hoverable w3-white">
+              <a class="w3-a" href="../index.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Home</span><br />
+                </li>
+              </a>
+            </ul>
+          </div>
+
+          <!-- Posts -->
+
+          <div class="w3-card-2 w3-margin w3-margin-top">
+            <ul class="w3-ul w3-hoverable w3-white">
+              <a class="w3-a" target="_blank" href="../ai_shihan_resume.pdf">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Resume</span><br />
+                </li>
+              </a>
+            </ul>
+          </div>
+
+          <div class="w3-card-2 w3-margin">
+            <div class="w3-container w3-padding">
+              <h4>Projects</h4>
+            </div>
+            <ul class="w3-ul w3-hoverable w3-white">
+              <a class="w3-a" href="photoenhancer.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Photo Enhancer</span><br />
+                  <span class="w3-opacity">Lightweight photo enhancer</span>
+                </li>
+              </a>
+              <a class="w3-a" href="foregroundextraction.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Photo Foreground Extraction</span
+                  ><br />
+                  <span class="w3-opacity">Detect the subject of an image</span>
+                </li>
+              </a>
+              <a class="w3-a" href="inpainting.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Selfie Acne Remover</span><br />
+                  <span class="w3-opacity"
+                    >Magically remove areas in an image</span
+                  >
+                </li>
+              </a>
+              <a class="w3-a" href="seamcarving.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Smart Image Resizing</span><br />
+                  <span class="w3-opacity">Content-aware image resizing</span>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+
+        <!-- END Introduction Menu -->
+      </div>
+
+      <!-- END GRID -->
     </div>
-  </div>
+    <br />
 
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>HOW IT WORKS</b></h3>
-      <hr>
-			<p>The algorithm is broken down into two steps, the first step is to obtain a rough mask of the object by using the GrabCut algorithm on a downsampled version of the image, then upsampling the result back into the image's original resolution, and the second step is to refine the mask. The output of the first step is shown below.</p>
-			<img src="../assets/foreground_extraction/closeup.png" width="475" height="400" /></br></br>
+    <!-- END w3-content -->
 
-			<p>To refine the mask, first we refine the foreground and background seeds for the image. This can be done by finding the contours of the eroded and dilated versions of the rough mask. The refined foreground seed (green), the refined background seed (blue), and the contour of the rough mask (red) are shown below.</p>
-			<img src="../assets/foreground_extraction/contourcloseup.png" width="450" height="430" /></br></br>
-
-			<p>Next, we inspect overlapping patches along the contour of the rough mask and classify each pixel in the patch as either foreground or background with the help of the refined seeds. In the patch, some pixels will be marked by the foreground seed and some by the background seed, our job is to classify all unmarked pixels based on two metrics, difference in color intensity and difference in location.</p>
-
-			<p>First we find the average color intensity of all the foreground seeded pixels and the average color intensity of all the background seeded pixels in the patch, then we look at each unmarked pixel in the patch and determine whether it is closer the foreground color or background color in the RGB color space. Next, we cluster the foreground and background pixels, find their centers, and look at each unmarked pixel and determine whether it is closer to the foreground or background in the image space. We take these two metrics and add them up to determine the total distance (in terms of color and location) between the pixel and either class, and finally we assign the pixel to the class with the smaller distance.</p>
-
-			<p>To speed up computation, four threads are spawned to allow concurrent processing. The result of the refinement step is shown below.</p>
-			<img src="../assets/foreground_extraction/closeuprefined.png" width="475" height="400" /></br></br>
-    </div>
-  </div>
-
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>GET THE CODE</b></h3>
-      <hr>
-			<p>The code is available on <a href="https://github.com/csaishih/foreground-extraction" target="_blank">GitHub</a></p>
-    </div>
-  </div>
-<!-- END BLOG ENTRIES -->
-</div>
-
-<!-- Introduction menu -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card-2 w3-margin w3-margin-top">
-
-			<ul class="w3-ul w3-hoverable w3-white">
-				<a class="w3-a" href="../index.html">
-					<li class="w3-padding-16">
-						<span class="w3-large">Home</span><br>
-					</li>
-				</a>
-			</ul>
-
-  </div>
-
-  <!-- Posts -->
-
-  <div class="w3-card-2 w3-margin w3-margin-top">
-      <ul class="w3-ul w3-hoverable w3-white">
-        <a class="w3-a" target="_blank" href="../ai_shihan_resume.pdf">
-          <li class="w3-padding-16">
-            <span class="w3-large">Resume</span><br>
-          </li>
-        </a>
-      </ul>
-  </div>
-
-  <div class="w3-card-2 w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Projects</h4>
-    </div>
-    <ul class="w3-ul w3-hoverable w3-white">
-      <a class="w3-a" href="photoenhancer.html">
-				<li class="w3-padding-16">
-					<span class="w3-large">Photo Enhancer</span><br>
-        	<span class="w3-opacity">Lightweight photo enhancer</span>
-				</li>
-			</a>
-      <a class="w3-a" href="foregroundextraction.html">
-				<li class="w3-padding-16">
-	        <span class="w3-large">Foreground Extraction</span><br>
-	        <span class="w3-opacity">Segment objects in digital images</span>
-				</li>
-			</a>
-			<a class="w3-a" href="inpainting.html">
-      	<li class="w3-padding-16">
-	        <span class="w3-large">Image Inpainting</span><br>
-	        <span class="w3-opacity">Remove objects in digital images</span>
-      	</li>
-			</a>
-      <a class="w3-a" href="seamcarving.html">
-				<li class="w3-padding-16">
-	        <span class="w3-large">Seam Carving</span><br>
-	        <span class="w3-opacity">Content-aware image resizing</span>
-				</li>
-			</a>
-    </ul>
-  </div>
-
-</div>
-
-<!-- END Introduction Menu -->
-</div>
-
-<!-- END GRID -->
-</div><br>
-
-<!-- END w3-content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-	<a style="color: #fff" href="https://github.com/csaishih" target="_blank">GitHub</a>
-	<a style="color: #fff" href="https://www.linkedin.com/in/aishihan/" target="_blank">LinkedIn</a>
-  <p>Powered by <a style="color: #fff" href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
-
-</body>
+    <!-- Footer -->
+    <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+      <a style="color: #fff" href="https://github.com/csaishih" target="_blank"
+        >GitHub</a
+      >
+      <a
+        style="color: #fff"
+        href="https://www.linkedin.com/in/aishihan/"
+        target="_blank"
+        >LinkedIn</a
+      >
+      <p>
+        Powered by
+        <a
+          style="color: #fff"
+          href="https://www.w3schools.com/w3css/default.asp"
+          target="_blank"
+          >w3.css</a
+        >
+      </p>
+    </footer>
+  </body>
 </html>

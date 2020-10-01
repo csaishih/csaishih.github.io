@@ -1,156 +1,256 @@
 <!DOCTYPE html>
 <html>
-<title>Shihan Ai Portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="../css/w3.css">
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey">
-
-<!-- w3-content defines a container for fixed size centered content,
+  <title>Shihan Ai Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Raleway"
+  />
+  <link rel="stylesheet" href="../css/w3.css" />
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Raleway", sans-serif;
+    }
+  </style>
+  <body class="w3-light-grey">
+    <!-- w3-content defines a container for fixed size centered content,
 and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1400px">
+    <div class="w3-content" style="max-width: 1400px">
+      <!-- Header -->
+      <header class="w3-container w3-center w3-padding-32">
+        <h1><b>Seam Carving</b></h1>
+        <p>Smart image resizing</p>
+      </header>
 
-<!-- Header -->
-<header class="w3-container w3-center w3-padding-32">
-  <h1><b>Seam Carving</b></h1>
-  <p>Smart image resizing</p>
-</header>
+      <!-- Grid -->
+      <div class="w3-row">
+        <!-- Blog entries -->
+        <div class="w3-col l8 s12">
+          <!-- Blog entry -->
+          <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+              <h3><b>WHAT IT DOES</b></h3>
+              <hr />
+              <p>
+                Seam carving is an algorithm that performs content-aware image
+                resizing. In other words, it is an algorithm that can resize a
+                photo without altering the important parts of the photo.
+              </p>
+              <p>
+                Suppose we have the following image with resolution 490 x 275
+                and we would like to resize it to 300 x 275
+              </p>
+              <img
+                src="../assets/seam_carve/source.jpg"
+                alt="source"
+              /><br /><br />
 
-<!-- Grid -->
-<div class="w3-row">
+              <p>
+                Result from Adobe Photoshop's image resize, everything is
+                squished since aspect ratio is not preserved.
+              </p>
+              <img
+                src="../assets/seam_carve/out_resize.jpg"
+                alt="resize"
+              /><br /><br />
 
-<!-- Blog entries -->
-<div class="w3-col l8 s12">
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>WHAT IT DOES</b></h3>
-      <hr>
-      <p>Seam carving is an algorithm that performs content-aware image resizing. In other words, it is an algorithm that can resize a photo without altering the important parts of the photo.</p>
-			<p>Suppose we have the following image with resolution 490 x 275 and we would like to resize it to 300 x 275</p>
-			<img src="../assets/seam_carve/source.jpg" alt="source" /></br></br>
+              <p>
+                Result from Adobe Photoshop's canvas crop, the bird is nearly
+                cut off and some branches are missing.
+              </p>
+              <img
+                src="../assets/seam_carve/out_crop.jpg"
+                alt="crop"
+              /><br /><br />
 
-			<p>Result from Adobe Photoshop's image resize, everything is squished since aspect ratio is not preserved.</p>
-			<img src="../assets/seam_carve/out_resize.jpg" alt="resize" /></br></br>
+              <p>
+                Result from seam carving, the important entities in the photo
+                are preserved.
+              </p>
+              <img
+                src="../assets/seam_carve/out.png"
+                alt="seamcarve"
+              /><br /><br />
+            </div>
+          </div>
 
-			<p>Result from Adobe Photoshop's canvas crop, the bird is nearly cut off and some branches are missing.</p>
-			<img src="../assets/seam_carve/out_crop.jpg" alt="crop" /></br></br>
+          <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+              <h3><b>HOW IT WORKS</b></h3>
+              <hr />
+              <p>
+                Seam carving, as the name suggests, does its job by removing
+                seams from images. A seam is simply a group of
+                <b>connected</b> pixels spanning from one end of an image to the
+                other end. A vertical seam spans from the top of the image to
+                the bottom and can only contain one pixel per row, a horizontal
+                seam spans from left to right and can only contain one pixel per
+                column.
+              </p>
 
-			<p>Result from seam carving, the important entities in the photo are preserved.</p>
-			<img src="../assets/seam_carve/out.png" alt="seamcarve" /></br></br>
+              <p>
+                Below is an example of a vertical seam (highlighted in red).
+              </p>
+              <img
+                src="../assets/seam_carve/seam.png"
+                alt="seam_example"
+              /><br /><br />
+
+              <p>
+                The algorithm removes one seam at a time until the desired
+                resolution is achieved and it will always remove the seam with
+                the lowest energy. We define the energy of a pixel as the
+                gradient magnitude of the pixel and the energy of a seam as the
+                sum of the energy from each pixel in the seam. In simpler terms,
+                the energy of a pixel is defined as the amount of color
+                variation between the pixel and its 8 surrounding pixels.
+              </p>
+
+              <p>
+                The intuition behind removing the seam with lowest energy is
+                that by doing so, we remove pixels that have very small changes
+                in color intensity when compared to its neighbours. Therefore,
+                we remove pixels that don't give us any important information
+                (since the neighbouring pixels share very similar colors and can
+                tell us the same thing).
+              </p>
+
+              <p>
+                The gradient magnitude is shown below. White pixels indicate
+                high color variation whereas black pixels indicate low color
+                variation. We can see that a seam crossing the bird or a branch
+                will have higher energy than a seam crossing only the background
+                because there are more white pixels in the bird and branches
+                than there are in the background.
+              </p>
+              <img
+                src="../assets/seam_carve/gradient.png"
+                alt="gradient_map"
+              /><br /><br />
+
+              <p>
+                This image shows the seams that were cut to resize our image.
+              </p>
+              <img
+                src="../assets/seam_carve/out_seams.png"
+                alt="seams_cut"
+              /><br /><br />
+            </div>
+          </div>
+
+          <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+              <h3><b>GET THE CODE</b></h3>
+              <hr />
+              <p>
+                The code is available on
+                <a
+                  href="https://github.com/csaishih/seam-carving"
+                  target="_blank"
+                  >GitHub</a
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- END BLOG ENTRIES -->
+        </div>
+
+        <!-- Introduction menu -->
+        <div class="w3-col l4">
+          <!-- About Card -->
+          <div class="w3-card-2 w3-margin w3-margin-top">
+            <ul class="w3-ul w3-hoverable w3-white">
+              <a class="w3-a" href="../index.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Home</span><br />
+                </li>
+              </a>
+            </ul>
+          </div>
+
+          <div class="w3-card-2 w3-margin w3-margin-top">
+            <ul class="w3-ul w3-hoverable w3-white">
+              <a class="w3-a" target="_blank" href="../ai_shihan_resume.pdf">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Resume</span><br />
+                </li>
+              </a>
+            </ul>
+          </div>
+
+          <!-- Posts -->
+          <div class="w3-card-2 w3-margin">
+            <div class="w3-container w3-padding">
+              <h4>Projects</h4>
+            </div>
+            <ul class="w3-ul w3-hoverable w3-white">
+              <a class="w3-a" href="photoenhancer.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Photo Enhancer</span><br />
+                  <span class="w3-opacity">Lightweight photo enhancer</span>
+                </li>
+              </a>
+              <a class="w3-a" href="foregroundextraction.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Photo Foreground Extraction</span
+                  ><br />
+                  <span class="w3-opacity">Detect the subject of an image</span>
+                </li>
+              </a>
+              <a class="w3-a" href="inpainting.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Selfie Acne Remover</span><br />
+                  <span class="w3-opacity"
+                    >Magically remove areas in an image</span
+                  >
+                </li>
+              </a>
+              <a class="w3-a" href="seamcarving.html">
+                <li class="w3-padding-16">
+                  <span class="w3-large">Smart Image Resizing</span><br />
+                  <span class="w3-opacity">Content-aware image resizing</span>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+
+        <!-- END Introduction Menu -->
+      </div>
+
+      <!-- END GRID -->
     </div>
-  </div>
+    <br />
 
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>HOW IT WORKS</b></h3>
-      <hr>
-			<p>Seam carving, as the name suggests, does its job by removing seams from images. A seam is simply a group of <b>connected</b> pixels spanning from one end of an image to the other end. A vertical seam spans from the top of the image to the bottom and can only contain one pixel per row, a horizontal seam spans from left to right and can only contain one pixel per column.</p>
+    <!-- END w3-content -->
 
-			<p>Below is an example of a vertical seam (highlighted in red).</p>
-			<img src="../assets/seam_carve/seam.png" alt="seam_example" /></br></br>
-
-			<p>The algorithm removes one seam at a time until the desired resolution is achieved and it will always remove the seam with the lowest energy. We define the energy of a pixel as the gradient magnitude of the pixel and the energy of a seam as the sum of the energy from each pixel in the seam. In simpler terms, the energy of a pixel is defined as the amount of color variation between the pixel and its 8 surrounding pixels.</p>
-
-			<p>The intuition behind removing the seam with lowest energy is that by doing so, we remove pixels that have very small changes in color intensity when compared to its neighbours. Therefore, we remove pixels that don't give us any important information (since the neighbouring pixels share very similar colors and can tell us the same thing).</p>
-
-			<p>The gradient magnitude is shown below. White pixels indicate high color variation whereas black pixels indicate low color variation. We can see that a seam crossing the bird or a branch will have higher energy than a seam crossing only the background because there are more white pixels in the bird and branches than there are in the background.</p>
-			<img src="../assets/seam_carve/gradient.png" alt="gradient_map" /></br></br>
-
-			<p>This image shows the seams that were cut to resize our image.</p>
-			<img src="../assets/seam_carve/out_seams.png" alt="seams_cut" /></br></br>
-    </div>
-  </div>
-
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>GET THE CODE</b></h3>
-      <hr>
-			<p>The code is available on <a href="https://github.com/csaishih/seam-carving" target="_blank">GitHub</a></p>
-    </div>
-  </div>
-
-<!-- END BLOG ENTRIES -->
-</div>
-
-<!-- Introduction menu -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card-2 w3-margin w3-margin-top">
-
-			<ul class="w3-ul w3-hoverable w3-white">
-				<a class="w3-a" href="../index.html">
-					<li class="w3-padding-16">
-						<span class="w3-large">Home</span><br>
-					</li>
-				</a>
-			</ul>
-  </div>
-
-  <div class="w3-card-2 w3-margin w3-margin-top">
-      <ul class="w3-ul w3-hoverable w3-white">
-        <a class="w3-a" target="_blank" href="../ai_shihan_resume.pdf">
-          <li class="w3-padding-16">
-            <span class="w3-large">Resume</span><br>
-          </li>
-        </a>
-      </ul>
-  </div>
-
-  <!-- Posts -->
-  <div class="w3-card-2 w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Projects</h4>
-    </div>
-    <ul class="w3-ul w3-hoverable w3-white">
-      <a class="w3-a" href="photoenhancer.html">
-				<li class="w3-padding-16">
-					<span class="w3-large">Photo Enhancer</span><br>
-        	<span class="w3-opacity">Lightweight photo enhancer</span>
-				</li>
-			</a>
-      <a class="w3-a" href="foregroundextraction.html">
-				<li class="w3-padding-16">
-	        <span class="w3-large">Foreground Extraction</span><br>
-	        <span class="w3-opacity">Segment objects in digital images</span>
-				</li>
-			</a>
-			<a class="w3-a" href="inpainting.html">
-      	<li class="w3-padding-16">
-	        <span class="w3-large">Image Inpainting</span><br>
-	        <span class="w3-opacity">Remove objects in digital images</span>
-      	</li>
-			</a>
-      <a class="w3-a" href="seamcarving.html">
-				<li class="w3-padding-16">
-	        <span class="w3-large">Seam Carving</span><br>
-	        <span class="w3-opacity">Smart image resizing</span>
-				</li>
-			</a>
-    </ul>
-  </div>
-
-</div>
-
-<!-- END Introduction Menu -->
-</div>
-
-<!-- END GRID -->
-</div><br>
-
-<!-- END w3-content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-	<a style="color: #fff" href="https://github.com/csaishih" target="_blank">GitHub</a>
-	<a style="color: #fff" href="https://www.linkedin.com/in/aishihan/" target="_blank">LinkedIn</a>
-  <p>Powered by <a style="color: #fff" href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
-
-</body>
+    <!-- Footer -->
+    <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+      <a style="color: #fff" href="https://github.com/csaishih" target="_blank"
+        >GitHub</a
+      >
+      <a
+        style="color: #fff"
+        href="https://www.linkedin.com/in/aishihan/"
+        target="_blank"
+        >LinkedIn</a
+      >
+      <p>
+        Powered by
+        <a
+          style="color: #fff"
+          href="https://www.w3schools.com/w3css/default.asp"
+          target="_blank"
+          >w3.css</a
+        >
+      </p>
+    </footer>
+  </body>
 </html>
