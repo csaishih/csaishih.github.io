@@ -1,7 +1,7 @@
 function loadJSON(callback) {
     var xObj = new XMLHttpRequest();
     xObj.overrideMimeType("application/json");
-    xObj.open('GET', './yugioh.json', true);
+    xObj.open('GET', './cardlist.json', true);
     xObj.onreadystatechange = function() {
         if (xObj.readyState === 4 && xObj.status === 200) {
             // 2. call your callback function
